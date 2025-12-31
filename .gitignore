@@ -1,0 +1,15 @@
+# OpenTofu / Terraform
+**/live/ci-cd-permissions/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfplan
+*.plan
+
+# (optionnel) fichiers variables si tu y mets des secrets
+# **/*.tfvars
+# **/*.tfvars.json
+
+# Node
+**/node_modules/
+npm-debug.log*
