@@ -14,12 +14,20 @@ jobs:
 
       - uses: aws-actions/configure-aws-credentials@v3
         with:
-          # TODO: fill in your IAM role ARN!
           role-to-assume: arn:aws:iam::983194206273:role/lambda-sample-tests
           role-session-name: tests-${{ github.run_number }}-${{ github.actor }}
           aws-region: eu-west-1
 
       - uses: opentofu/setup-opentofu@v1
+
+      - name: Debug tofu tree
+        working-directory: td5/scripts/tofu/lambda-sample
+        run: |
+          pwd
+          ls -la
+          ls -la ../ || true
+          ls -la ../modules || true
+          find .. -maxdepth 4 -type d \( -name "api-gateway" -o -name "lambda" -o -name "test-endpoint" \)
 
       - name: Tofu Test
         env:
