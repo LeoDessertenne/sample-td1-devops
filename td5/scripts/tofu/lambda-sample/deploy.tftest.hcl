@@ -6,7 +6,7 @@ run "validate" {
   command = apply
 
   module {
-    source = "../test-endpoint"
+    source = "../modules/test-endpoint"
   }
 
   variables {

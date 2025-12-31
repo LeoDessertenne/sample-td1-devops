@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-2"
+  region = var.region
 }
 
 module "function" {
@@ -8,11 +8,11 @@ module "function" {
   name = var.name
 
   src_dir = "${path.module}/src"
-  runtime = "nodejs20.x"
+  runtime = var.runtime
   handler = "index.handler"
 
-  memory_size = 128
-  timeout     = 5
+  memory_size = var.memory_size
+  timeout     = var.timeout
 
   environment_variables = {
     NODE_ENV = "production"
