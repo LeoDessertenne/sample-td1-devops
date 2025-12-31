@@ -31,11 +31,11 @@ variable "lambda_base_name" {
 variable "tofu_state_bucket" {
   description = "S3 bucket for Tofu state"
   type        = string
-  default     = "leo-td5-tofu-state-59823"
+  default     = "td1-sample-devops-9904"
 }
 
 variable "tofu_state_dynamodb_table" {
   description = "DynamoDB table for Tofu state locking"
   type        = string
-  default     = "leo-td5-tofu-locks"
+  default     = "td1-sample-devops-9904"
 }
